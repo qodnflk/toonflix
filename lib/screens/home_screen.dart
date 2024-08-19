@@ -46,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return ListView.separated(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
       itemBuilder: (context, index) {
-        print(index);
         var webtoon = sanpshot.data![index];
         return Webtoon(
           title: webtoon.title,
