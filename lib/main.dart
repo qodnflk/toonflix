@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:toonflix/screens/json_parse.dart';
 import 'package:toonflix/screens/home_screen.dart';
 
 class MyHttpOverrides extends HttpOverrides {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const JsonParse(),
     );
   }
 }

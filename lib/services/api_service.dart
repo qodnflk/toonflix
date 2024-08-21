@@ -16,8 +16,9 @@ class ApiService {
     final response = await http.get(uri);
 
     if (response.statusCode == 200) {
-      final List<dynamic> webtoons = jsonDecode(response.body); //jsonDecode Json 형식의 문자열을  Dart에서 사용할 수 있는 객체로 변환 
-    
+      final List<dynamic> webtoons = jsonDecode(
+          response.body); //jsonDecode Json 형식의 문자열을  Dart에서 사용할 수 있는 객체로 변환
+
       for (var webtoon in webtoons) {
         final instance = WebtoonModel.fromJson(webtoon);
         webtoonInstances.add(instance);
@@ -26,8 +27,6 @@ class ApiService {
     }
     throw Error();
   }
-
-  
 
   static Future<WebtoonDetailModel> getToonByld(String id) async {
     final url = Uri.parse('$baseUrl/$id');
